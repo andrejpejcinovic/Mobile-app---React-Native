@@ -31,10 +31,8 @@ test("Lobby renders player input and handles updates", () => {
     />
   );
 
-  // Verify the TextInput exists and simulate a name change
   const input = getByPlaceholderText("Enter player name");
   fireEvent.changeText(input, "Player 1");
 
-  // Ensure the mock function is called with the correct arguments
   expect(mockHandleUpdate).toHaveBeenCalledWith(1, "Player 1");
 });

@@ -18,10 +18,8 @@ test("initializePlayers generates correct player objects", () => {
   const screens = 3;
   const players = initializePlayers(screens);
 
-  // Ensure the number of players matches the number of screens
   expect(players).toHaveLength(screens);
 
-  // Verify each player's properties
   players.forEach((player, index) => {
     expect(player).toEqual({
       id: index + 1,

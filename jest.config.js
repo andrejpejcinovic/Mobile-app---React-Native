@@ -12,7 +12,4 @@ module.exports = {
     "\\.(png|jpg|jpeg|svg|ttf)$": "<rootDir>/__mocks__/fileMock.js",
   },
   setupFiles: ["./jest.setup.js"],
-  testPathIgnorePatterns: [
-    "<rootDir>/__tests__/e2e"
-  ]
 };

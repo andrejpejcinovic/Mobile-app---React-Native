@@ -7,7 +7,10 @@ jest.mock("../../screens/Quiz", () => {
     return (
       <View>
         <Text>{question.text}</Text>
-        <Button title={question.correct.toString()} onPress={() => handleChoiceSelect(0)} />
+        <Button
+          title={question.correct.toString()}
+          onPress={() => handleChoiceSelect(0)}
+        />
       </View>
     );
   };
@@ -28,14 +31,11 @@ test("Quiz displays questions and handles choices", () => {
     />
   );
 
-  // Verify the question text renders
   const questionText = getByText("What is 2+2?");
   expect(questionText).toBeTruthy();
 
-  // Verify the answer button renders and simulate a press
   const answerButton = getByText("4");
   fireEvent.press(answerButton);
 
-  // Ensure the mock function is called with the correct screen index
   expect(mockHandleChoice).toHaveBeenCalledWith(0);
 });
